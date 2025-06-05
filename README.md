@@ -8,9 +8,13 @@ This repository includes code related to the article ["Inter-Sensor High-Resolut
 
 Motivated by the increasing demand for robust segmentation in unlabeled remote sensing data, we propose domain adaptation multimodal and multi-temporal transformer (DAM-Former), a novel unsupervised domain adaptation (UDA) model that fuses high-resolution (HR) multimodal imagery with multi-temporal multispectral data. Current UDA approaches in remote sensing rarely exploit the complementary strengths of spatial and temporal features. To address this gap, our framework integrates two interconnected branches: a transformer-based network for HR multimodal data and a lightweight convolutional network with temporal attention for multi-temporal imagery. To improve segmentation accuracy and lower noise, the extracted features are robustly combined through a deep temporal fusion (DTF) module and a new mixed loss (ML) with an ensemble pseudo-label (EP) strategy. Extensive experiments and an ablation study on the FLAIR-2 dataset demonstrate that DAM-Former outperforms state-of-the-art methods, marking the first in-depth study of temporal information fusion in UDA segmentation for remote sensing data.
 
-![Architecture of the DAM-Former. On the top, the low-resolution (LR) multitemporal branch, with the convolutional encoder and decoder blocks in blue and pink, respectively. Including the temporal attention block in green and the deep temporal fusion module in purple. On the bottom, the high-resolution (HR) multimodal branch, with the transformer encoders in yellow, and the lighter convolutional decoders in red.](images/DAMFORMER.png)
+![alt text](images/DAMFORMER.png)
 
-![South to North UDA segmentation visual results covering an urban area with a large number of buildings, roads, parks and a river, where: (a) Ground Truth, (b) RGB image, (c) NIR image, (d) elevation image, (e) RGB U-Net (C), (f) RGB DAFormer, (g) RGB U-Net (T), (h) RGB+NIR+E U-Net (C), (i) RGB+NIR+E DAFormer, (j) RGB+NIR+E U-Net (T), (k) RGB+T U-Net (C), (l) RGB+T DAFormer, (m) RGB+T U-Net (T), (n) RGB+NIR+E+T U-Net (C), (o) RGB+NIR+E+T DAFormer, (p) RGB+NIR+E+T \textbf{DAM-Former}.](images/example.png)
+Architecture of the DAM-Former. On the top, the low-resolution (LR) multitemporal branch, with the convolutional encoder and decoder blocks in blue and pink, respectively. Including the temporal attention block in green and the deep temporal fusion module in purple. On the bottom, the high-resolution (HR) multimodal branch, with the transformer encoders in yellow, and the lighter convolutional decoders in red.
+
+![alt text](images/example.png)
+
+South to North UDA segmentation visual results covering an urban area with a large number of buildings, roads, parks and a river, where: (a) Ground Truth, (b) RGB image, (c) NIR image, (d) elevation image, (e) RGB U-Net (C), (f) RGB DAFormer, (g) RGB U-Net (T), (h) RGB+NIR+E U-Net (C), (i) RGB+NIR+E DAFormer, (j) RGB+NIR+E U-Net (T), (k) RGB+T U-Net (C), (l) RGB+T DAFormer, (m) RGB+T U-Net (T), (n) RGB+NIR+E+T U-Net (C), (o) RGB+NIR+E+T DAFormer, (p) DAM-Former.
 
 Citation
 ---------------------
@@ -39,7 +43,7 @@ The code for this work was based on the code in [DAFormer](https://github.com/lh
 
 Dataset preparation
 ---------------------
-In order to use the FLAIR #2 dataset, first run the script [flair2.py]() to generate the required headers. In this file it is possible to select different domains of the FLAIR #2 dataset. You should run it for the source domain(s) and target domain(s) to be used. 
+In order to use the FLAIR #2 dataset, first run the script [flair2.py](https://github.com/ibanezfd/DAM_Former/blob/main/tools/convert_datasets/flair2.py) to generate the required headers. In this file it is possible to select different domains of the FLAIR #2 dataset. You should run it for the source domain(s) and target domain(s) to be used. 
 Then, follow the steps described in [DAFormer](https://github.com/lhoyer/DAFormer) with our modifications and model. 
 
 Licensing
