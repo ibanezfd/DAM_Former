@@ -8,9 +8,9 @@ This repository includes code related to the article ["Inter-Sensor High-Resolut
 
 Motivated by the increasing demand for robust segmentation in unlabeled remote sensing data, we propose domain adaptation multimodal and multi-temporal transformer (DAM-Former), a novel unsupervised domain adaptation (UDA) model that fuses high-resolution (HR) multimodal imagery with multi-temporal multispectral data. Current UDA approaches in remote sensing rarely exploit the complementary strengths of spatial and temporal features. To address this gap, our framework integrates two interconnected branches: a transformer-based network for HR multimodal data and a lightweight convolutional network with temporal attention for multi-temporal imagery. To improve segmentation accuracy and lower noise, the extracted features are robustly combined through a deep temporal fusion (DTF) module and a new mixed loss (ML) with an ensemble pseudo-label (EP) strategy. Extensive experiments and an ablation study on the FLAIR-2 dataset demonstrate that DAM-Former outperforms state-of-the-art methods, marking the first in-depth study of temporal information fusion in UDA segmentation for remote sensing data.
 
-![alt text](images/DAMFORMER.png)
+![Architecture of the DAM-Former. On the top, the low-resolution (LR) multitemporal branch, with the convolutional encoder and decoder blocks in blue and pink, respectively. Including the temporal attention block in green and the deep temporal fusion module in purple. On the bottom, the high-resolution (HR) multimodal branch, with the transformer encoders in yellow, and the lighter convolutional decoders in red.](images/DAMFORMER.png)
 
-![alt text](images/example.png)
+![South to North UDA segmentation visual results covering an urban area with a large number of buildings, roads, parks and a river, where: (a) Ground Truth, (b) RGB image, (c) NIR image, (d) elevation image, (e) RGB U-Net (C), (f) RGB DAFormer, (g) RGB U-Net (T), (h) RGB+NIR+E U-Net (C), (i) RGB+NIR+E DAFormer, (j) RGB+NIR+E U-Net (T), (k) RGB+T U-Net (C), (l) RGB+T DAFormer, (m) RGB+T U-Net (T), (n) RGB+NIR+E+T U-Net (C), (o) RGB+NIR+E+T DAFormer, (p) RGB+NIR+E+T \textbf{DAM-Former}.](images/example.png)
 
 Citation
 ---------------------
